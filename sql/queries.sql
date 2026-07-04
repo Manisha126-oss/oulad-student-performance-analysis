@@ -12,3 +12,8 @@ GROUP BY region, final_result;
 SELECT gender, final_result, COUNT(*) AS number_of_students
 FROM studentInfo
 GROUP BY gender, final_result;
+
+-- Question 4: Does age band affect student outcomes?
+SELECT age_band, final_result, COUNT(*) AS number_of_students
+FROM studentInfo
+GROUP BY age_band, final_result;
