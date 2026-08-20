@@ -3,19 +3,20 @@
 ## Overview
 This project analyzes student engagement and outcome data from the Open 
 University Learning Analytics Dataset (OULAD) to understand whether factors 
-like disability status, region, gender, and age are linked to student 
-dropout and academic performance, with the aim of helping course teams 
-identify at-risk student groups early and provide targeted support.
+like disability status, region, gender, age, and early course engagement 
+are linked to student dropout and academic performance, with the aim of 
+helping course teams identify at-risk student groups early and provide 
+targeted support.
 
 ## Business Questions
 1. Does a student's disability status affect their chance of passing or withdrawing?
 2. Does a student's region affect their academic outcomes?
 3. Does a student's gender affect their academic outcomes?
 4. Does a student's age group affect their academic outcomes?
-5. *(Coming next)* Can early engagement (VLE clicks) predict which students will withdraw?
+5. Can early engagement (VLE clicks in the first 4 weeks) predict which students will withdraw?
 
 ## Tools Used
-- SQL (SQLite) — querying and aggregating student data
+- SQL (SQLite) — querying, joining, and aggregating student data
 - Python (pandas) — *coming next*
 - Power BI — *coming next*
 
@@ -45,11 +46,21 @@ pattern should be treated with caution, especially for the 55+ group, since
 it only had 216 students — a small sample where a few individuals can swing 
 the percentage significantly.
 
+**Early engagement (strongest finding):** Students with low engagement in 
+their first 4 weeks had a pass rate of just 30.3%, compared to 47.5% for 
+highly engaged students — a much bigger gap than any demographic factor 
+showed. This suggests early engagement is a strong early-warning signal for 
+academic outcomes, and could allow course teams to identify at-risk students 
+in week 3-4 and reach out with support before it's too late to change the 
+outcome. Unlike the other findings, this one is predictive rather than 
+descriptive — it can be acted on while the course is still running.
+
 ## How to Reproduce
 1. Download the OULAD dataset from https://analyse.kmi.open.ac.uk/open-dataset
-2. Import `studentInfo.csv` into a SQLite database (e.g. using DB Browser for SQLite)
+2. Import `studentInfo.csv` and `studentVle.csv` into a SQLite database 
+   (e.g. using DB Browser for SQLite)
 3. Run the queries in `sql/queries.sql`
 
 ## Status
-🚧 In progress — next steps are joining engagement (VLE) data to predict 
-withdrawal risk, adding Python-based analysis, and building a Power BI dashboard.
+🚧 In progress — next steps are adding Python-based analysis and building 
+a Power BI dashboard to visualize these findings.
