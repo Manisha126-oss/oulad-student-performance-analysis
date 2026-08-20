@@ -17,8 +17,8 @@ targeted support.
 
 ## Tools Used
 - SQL (SQLite) — querying, joining, and aggregating student data
-- Python (pandas) — *coming next*
-- Power BI — *coming next*
+- Python (pandas, matplotlib) — validating SQL findings and creating charts
+- Power BI — building an interactive dashboard to visualize key findings
 
 ## Key Findings
 
@@ -57,6 +57,14 @@ outcome. Unlike the other findings, this one is predictive rather than
 descriptive — it can be acted on while the course is still running.
 ![Student outcomes by engagement level](engagement_chart.png)
 
+## Dashboard
+
+![Power BI dashboard](powerbi_dashboard.png)
+
+An interactive Power BI dashboard visualizing the disability and engagement 
+findings above. The `.pbix` file is available on request, as it requires 
+Power BI Desktop to open.
+
 ## How to Reproduce
 1. Download the OULAD dataset from https://analyse.kmi.open.ac.uk/open-dataset
 2. Import `studentInfo.csv` and `studentVle.csv` into a SQLite database 
@@ -64,5 +72,5 @@ descriptive — it can be acted on while the course is still running.
 3. Run the queries in `sql/queries.sql`
 
 ## Status
-🚧 In progress — next steps are adding Python-based analysis and building 
-a Power BI dashboard to visualize these findings.
+✅ Complete — SQL analysis, Python validation with charts, and a Power BI 
+dashboard all support the same core findings.
