@@ -27,6 +27,7 @@ targeted support.
 were similar between the two groups (22.5% vs 21.5%). This suggests disability 
 status is linked to dropout risk specifically — not academic struggle — and 
 should be considered in early-intervention efforts.
+![Student outcomes by disability status](disability_chart.png)
 
 **Region:** Ireland had the highest pass rate (46.6%) while North Western 
 Region had the lowest (32.9%), suggesting outcomes vary meaningfully by 
@@ -54,6 +55,7 @@ academic outcomes, and could allow course teams to identify at-risk students
 in week 3-4 and reach out with support before it's too late to change the 
 outcome. Unlike the other findings, this one is predictive rather than 
 descriptive — it can be acted on while the course is still running.
+![Student outcomes by engagement level](engagement_chart.png)
 
 ## How to Reproduce
 1. Download the OULAD dataset from https://analyse.kmi.open.ac.uk/open-dataset
