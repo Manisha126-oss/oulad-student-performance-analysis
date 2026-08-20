@@ -25,13 +25,13 @@ targeted support.
 **Disability status:** Students with a disability were more likely to withdraw 
 (39.3%) compared to students without a disability (30.3%), while fail rates 
 were similar between the two groups (22.5% vs 21.5%). This suggests disability 
-status is linked to dropout risk specifically — not academic struggle — and 
+status is linked to dropout risk specifically not academic struggle and 
 should be considered in early-intervention efforts.
 ![Student outcomes by disability status](disability_chart.png)
 
 **Region:** Ireland had the highest pass rate (46.6%) while North Western 
 Region had the lowest (32.9%), suggesting outcomes vary meaningfully by 
-region — possibly due to differences in local support access or student 
+region possibly due to differences in local support access or student 
 demographics across regions.
 
 **Gender:** Female students had a slightly higher pass rate (39.0%) compared 
