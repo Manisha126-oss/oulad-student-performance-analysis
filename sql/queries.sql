@@ -17,3 +17,21 @@ GROUP BY gender, final_result;
 SELECT age_band, final_result, COUNT(*) AS number_of_students
 FROM studentInfo
 GROUP BY age_band, final_result;
+
+-- Question 5: Can early engagement (VLE clicks) predict withdrawal?
+SELECT
+  CASE
+    WHEN early_clicks.total_clicks < 50 THEN 'Low engagement'
+    WHEN early_clicks.total_clicks < 200 THEN 'Medium engagement'
+    ELSE 'High engagement'
+  END AS engagement_level,
+  studentInfo.final_result,
+  COUNT(*) AS number_of_students
+FROM
+  (SELECT id_student, SUM(sum_click) AS total_clicks
+   FROM studentVle
+   WHERE date BETWEEN 0 AND 28
+   GROUP BY id_student) AS early_clicks
+JOIN studentInfo
+  ON early_clicks.id_student = studentInfo.id_student
+GROUP BY engagement_level, studentInfo.final_result;
