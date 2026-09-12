@@ -1,7 +1,25 @@
 -- Question 1: Does disability status affect student outcomes?
+
+-- (1a) Raw counts by disability status and outcome
 SELECT disability, final_result, COUNT(*) AS number_of_students
 FROM studentInfo
 GROUP BY disability, final_result;
+
+-- (1b) Converted to rates using conditional aggregation (CASE + SUM),
+-- so disability groups of different sizes can be fairly compared
+SELECT disability,
+  ROUND(100.0 * SUM(CASE WHEN final_result = 'Withdrawn' THEN 1 ELSE 0 END) / COUNT(*), 1) AS withdrawal_rate_pct,
+  ROUND(100.0 * SUM(CASE WHEN final_result = 'Pass' THEN 1 ELSE 0 END) / COUNT(*), 1) AS pass_rate_pct,
+  COUNT(*) AS total_students
+FROM studentInfo
+GROUP BY disability;
+
+-- (1c) Fail rate checked separately, to confirm whether the withdrawal
+-- gap reflects dropout risk specifically, or general academic struggle
+SELECT disability,
+  ROUND(100.0 * SUM(CASE WHEN final_result = 'Fail' THEN 1 ELSE 0 END) / COUNT(*), 1) AS fail_rate_pct
+FROM studentInfo
+GROUP BY disability;
 
 -- Question 2: Does region affect student outcomes?
 SELECT region, final_result, COUNT(*) AS number_of_students
